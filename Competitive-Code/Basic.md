@@ -214,7 +214,7 @@ int main() {
     return 0;
 }
 ```
-## 3.WAP to find number is prime or not, if number is prime then print the sqoure root of the number upto two decimal
+## 4.WAP to find number is prime or not, if number is prime then print the sqoure root of the number upto two decimal
 
 ## C
 ```c
@@ -269,7 +269,7 @@ int main() {
 }
 ```
 
-## 4. wap to find the all possible prime number whithin a range
+## 5. wap to find the all possible prime number whithin a range
 ## c
 ```c
 // Online C compiler to run C program online
@@ -347,7 +347,7 @@ int main() {
 }
 ```
 
-## 5. wap to find the sum of all posible prime number within a range
+## 6. wap to find the sum of all posible prime number within a range
 
 ## C
 ```c
@@ -426,3 +426,417 @@ int main() {
     return 0;
 }
 ```
+
+## 7. wap to find the gretest number among three number (all number is not equal)
+## C
+```c
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    // Write C code here
+    int a, b, c;
+    scanf("%u", &a);
+    scanf("%u", &b);
+    scanf("%u", &c);
+    if(a > b && a > c){
+        printf("Greatest Number %u", a);
+    }
+    else if(b > a && b > c){
+        printf("Greatest Number %u", b);
+    }
+    else {
+        printf("Greatest Number %u", c);
+    }
+
+    return 0;
+}
+```
+## c++
+```c++
+// Online C++ compiler to run C++ program online
+#include <iostream>
+
+using namespace std;
+int main() {
+     int a, b, c;
+    cin>>a>>b>>c;
+    if(a > b && a > c){
+        cout<<"Greatest Number "<< a;
+    }
+    else if(b > a && b > c){
+            cout<<"Greatest Number "<< b;
+    }
+    else {
+     cout<<"Greatest Number "<< c;
+    }
+    return 0;
+}
+```
+## java
+```java
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.Scanner;
+class HelloWorld {
+    public static void main(String[] args) {
+        Scanner Sc = new Scanner(System.in);
+        int a = Sc.nextInt();
+        int b = Sc.nextInt();
+        int c = Sc.nextInt();
+        if(a > b && a > c){
+             System.out.println("Greatest Number " + a);
+    }
+    else if(b > a && b > c){
+                 System.out.println("Greatest Number " + b);
+    }
+    else {
+     System.out.println("Greatest Number " + c);
+    }
+       
+    }
+}
+```
+## 8.wap to find smallest number among 4 number (number are not equal)
+## c
+```c
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    // Write C code here
+    int a, b, c,d;
+    scanf("%u %u %u %u", &a, &b, &c, &d);
+  
+    if(a < b && a < c && a < d ){
+        printf("Smallest Number %u", a);
+    }
+    else if(b < a && b < c && b < d){
+        printf("Samllest Number %u", b);
+    }
+    else if( c < a && c < b && c < d){
+        printf("Smallest Number %u", c);
+    }
+     else {
+        printf("Smallest Number %u", d);
+    }
+
+    return 0;
+}
+```
+## c++
+```c++
+// Online C++ compiler to run C++ program online
+#include <iostream>
+
+using namespace std;
+int main() {
+     int a, b, c,d;
+    cin>>a>>b>>c>>d;
+    if(a < b && a < c && a < d){
+        cout<<"Smallest Number "<< a;
+    }
+    else if(b < a && b < c && b < d){
+            cout<<"Smallest Number "<< b;
+    }
+    else if(c < a && c < b && c < d){
+            cout<<"Smallest Number "<< c;
+    }
+    else {
+     cout<<"Smallest Number "<< d;
+    }
+    return 0;
+}
+```
+## java 
+```java
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.Scanner;
+class HelloWorld {
+    public static void main(String[] args) {
+        Scanner Sc = new Scanner(System.in);
+        int a = Sc.nextInt();
+        int b = Sc.nextInt();
+        int c = Sc.nextInt();
+        int d = Sc.nextInt();
+        if(a < b && a < c && a < d){
+             System.out.println("Smallest Number " + a);
+    }
+    else if(b < a && b < c && b < d){
+                 System.out.println("Smallest Number " + b);
+    }
+    else if(c < a && c < b && c < d){
+                 System.out.println("Smallest Number " + c);
+    }
+    else {
+     System.out.println("Smallest Number " + d);
+    }
+       
+    }
+}
+```
+
+## 9.wap to find second greatest number among 3 number(number is not same)
+## c
+```c
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    // Write C code here
+    int a, b, c;
+    scanf("%u %u %u", &a, &b, &c);
+  
+    if(a > b && a > c ){
+        if(b > c)
+        printf("Greatest Number %u", b);
+        else
+        printf("Greatest Number %u", c);
+    }
+    else if(b > a && b > c ){
+        if(a > c)
+        printf("Greatest Number %u", a);
+        else
+        printf("Greatest Number %u", c);
+    }
+    else if(c > a && c > b){
+        if(a > b)
+        printf("Greatest Number %u", a);
+        else
+        printf("Greatest Number %u", b);
+    }
+
+    return 0;
+}
+```
+## c++
+```c++
+// Online C++ compiler to run C++ program online
+#include <iostream>
+
+using namespace std;
+int main() {
+     int a, b, c;
+    cin>>a>>b>>c;
+    if(a > b && a > c){
+        if(b > c )
+        cout<<"Greatest Number "<< b;
+        else
+        cout<<"Greatest Number "<< c;
+    }
+    else if(b > a && b > c){
+        if(a > c )
+        cout<<"Greatest Number "<< a;
+        else
+        cout<<"Greatest Number "<< c;
+    } 
+    else if(c > a && c > b){
+        if(a > b )
+        cout<<"Greatest Number "<< a;
+        else
+        cout<<"Greatest Number "<< b;
+    }
+    return 0;
+}
+```
+## java
+```java
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.Scanner;
+class HelloWorld {
+    public static void main(String[] args) {
+        Scanner Sc = new Scanner(System.in);
+        int a = Sc.nextInt();
+        int b = Sc.nextInt();
+        int c = Sc.nextInt();
+        if(a > b && a > c){
+            if(b > c)
+             System.out.println("greatest Number " + b);
+             else
+             System.out.println("greatest Number " + c);
+    }
+    else  if(b > a && b > c){
+            if(a > c)
+             System.out.println("greatest Number " + a);
+             else
+             System.out.println("greatest Number " + c);
+    }
+    else  if(c > b && c > a){
+            if(b > a)
+             System.out.println("greatest Number " + b);
+             else
+             System.out.println("greatest Number " + a);
+    }
+       
+    }
+}
+```
+
+## 10. wap to user enter dd-mm-yyyy find out the numbers of days in month ( ignore leap year)
+## c
+```c
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    // Write C code here
+    int a, b, c;
+    scanf("%u %u %u", &a, &b, &c);
+  
+    if(b == 1 || b == 3 || b == 5 || b == 7 || b == 8 || b == 10 || b == 31 ){
+        printf("31");
+    }
+    else  if(b == 4 || b == 6 || b == 9 || b == 11 ){
+        printf("30");
+    }
+    else if(b == 2)
+    printf("28");
+
+    return 0;
+}
+```
+## c++
+```c++
+// Online C++ compiler to run C++ program online
+#include <iostream>
+
+using namespace std;
+int main() {
+     int a, b, c;
+    cin>>a>>b>>c;
+    if(b == 1 || b == 3 || b == 5 || b == 7 || b == 8 || b == 10 || b == 31 ){
+        cout<<"31";
+    }
+    else  if(b == 4 || b == 6 || b == 9 || b == 11 ){
+       cout<<"30";
+    }
+    else if(b == 2)
+   cout<<"28";
+    return 0;
+}
+```
+## java
+```java
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.Scanner;
+class HelloWorld {
+    public static void main(String[] args) {
+        Scanner Sc = new Scanner(System.in);
+        int a = Sc.nextInt();
+        int b = Sc.nextInt();
+        int c = Sc.nextInt();
+         if(b == 1 || b == 3 || b == 5 || b == 7 || b == 8 || b == 10 || b == 31 )
+         {
+             System.out.println("31");
+         }
+    
+    else  if(b == 4 || b == 6 || b == 9 || b == 11 ){
+       System.out.println("30");
+    }
+    else  if(b == 2){
+        System.out.println("28");
+    }
+       
+    }
+}
+```
+
+## 11. wap to find whether the number is perfect square or not
+## c
+```c
+// Online C compiler to run C program online
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    // Write C code here
+    int a;
+    scanf("%u", &a);
+    int b = sqrt(a);
+    if(a == (b * b))
+    printf("Success");
+    else
+    printf("Failure");
+    return 0;
+}
+```
+## c++
+```c++
+// Online C compiler to run C program online
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+int main() {
+    // Write C code here
+    int a;
+    cin>>a;
+    int b = sqrt(a);
+    if(a == (b * b))
+    cout<<"Success";
+    else
+    cout<<"Failure";
+    return 0;
+}
+```
+## 12.wap to find sum of digit
+## c
+```c
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    // Write C code here
+    int a, b = 0;
+    scanf("%u", &a);
+    while(a){
+        b = b + (a % 10);
+        a = a / 10;
+    }
+    printf("%u",b);
+    
+    return 0;
+}
+```
+## C++
+```c++
+// Online C compiler to run C program online
+#include <stdio.h>
+#include <iostream>
+
+using namespace std;
+int main() {
+    // Write C code here
+    int a, b = 0;
+    cin>>a;
+    while(a){
+        b = b + (a % 10);
+        a = a / 10;
+    }
+    cout<<b;
+    
+    return 0;
+}
+```
+## java
+```java
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.Scanner;
+class HelloWorld {
+    public static void main(String[] args) {
+        Scanner Sc = new Scanner(System.in);
+        int a = Sc.nextInt();
+        int sum =0;
+        while(a != 0){
+            sum = sum + (a % 10);
+            a = a / 10;
+        }
+        System.out.println(sum);
+       
+    }
+}
+```  
