@@ -1208,3 +1208,508 @@ int main() {
     return 0;
 }
 ```
+
+## 21.wap for given a time in 12-hour AM/PM format, convert it to railway (24-hour) time
+<!-- 
+input 
+08:00:00 PM
+output
+20:00:00
+
+input 
+03:55:50 AM
+output
+03:55:50
+ -->
+## c
+```c
+// Online C compiler to run C program online
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    // Write C code here
+    int hh, mm, ss;
+    char a[3];
+    printf("Enter Hour 'hh' ");
+    scanf("%d", &hh);
+    printf("Enter Minute 'mm' ");
+    scanf("%d", &mm);
+    printf("Enter Second'ss' ");
+    scanf("%d", &ss);
+    printf("Enter am or pm ");
+    scanf("%s", &a);
+   
+   if(hh > 0 && hh <= 12 && mm <=59 && ss <=59 && (strcmp(a, "PM") == 0 || strcmp(a, "pm") == 0 || strcmp(a, "AM") == 0 || strcmp(a, "am") == 0)  ){
+       
+       if((strcmp(a, "PM") == 0) || (strcmp(a,"pm") == 0) && hh != 12){
+           hh = hh + 12;
+       }
+       if((strcmp(a, "AM") == 0) || (strcmp(a, "am") == 0) || hh == 12)
+       {
+           hh = 0;
+       }
+       printf("The obtained 24-hour format of input is  ");
+       printf("%d:%d:%d", hh, mm, ss);
+       printf("\n");
+   }
+   else{
+       printf("Provide the correct inputs ");
+   }
+   
+    return 0;
+}
+```
+## c++
+```c++
+// Online C compiler to run C program online
+#include <iostream>
+#include <string.h>
+
+using namespace std;
+int main() {
+    // Write C code here
+    int hh, mm, ss;
+    char a[3];
+    cout<<"Enter Hour 'hh' ";
+    cin>>hh;
+    cout<<"Enter Minute 'mm' ";
+    cin>>mm;
+    cout<<"Enter Second 'ss' ";
+    cin>>ss;
+    cout<<"Enter am or pm ";
+    cin>>a;
+   
+   if(hh > 0 && hh <= 12 && mm <=59 && ss <=59 && (strcmp(a, "PM") == 0 || strcmp(a, "pm") == 0 || strcmp(a, "AM") == 0 || strcmp(a, "am") == 0)  ){
+       
+       if((strcmp(a, "PM") == 0) || (strcmp(a,"pm") == 0) && hh != 12){
+           hh = hh + 12;
+       }
+       if((strcmp(a, "AM") == 0) || (strcmp(a, "am") == 0) || hh == 12)
+       {
+           hh = 0;
+       }
+       cout<<"The obtained 24-hour format of input is  ";
+       cout<<hh<<":"<<mm<<":"<<ss;
+       cout<<"\n";
+   }
+   else{
+       cout<<"Provide the correct inputs ";
+   }
+   
+    return 0;
+}
+```
+## 22.wap to convert decimal to binary(Q23 same as Q22)
+## C++
+```c++
+// Online C compiler to run C program online
+#include <iostream>
+
+using namespace std;
+int main() {
+    // Write C code here
+    int num, i = 0, arr[20];
+    cout<<"Enter a decimal Number : ";
+    cin>>num;
+    
+    while(num ){
+     arr[i] = num % 2;
+     num = num / 2;
+     i++;
+    }
+    for(int j = i - 1; j >= 0; j--){
+        cout<< arr[j]<<" ";
+    }
+   
+    return 0;
+}
+```
+```c
+// Online C compiler to run C program online
+#include <stdio.h>
+
+
+int main() {
+    // Write C code here
+    int num, i = 0, arr[20];
+    printf("Enter a decimal Number : ");
+    scanf("%d", num);
+    
+    while(num ){
+     arr[i] = num % 2;
+     num = num / 2;
+     i++;
+    }
+    for(int j = i - 1; j >= 0; j--){
+        printf("%d ", arr[j]);
+    }
+   
+    return 0;
+}
+```
+
+## 23.wap to convert decimal to octal
+## c++
+```c++
+// Online C compiler to run C program online
+#include <iostream>
+
+using namespace std;
+int main() {
+    // Write C code here
+    int num, i = 0, arr[20];
+    cout<<"Enter a decimal Number : ";
+    cin>>num;
+    
+    while(num ){
+     arr[i] = num % 8;
+     num = num / 8;
+     i++;
+    }
+    for(int j = i - 1; j >= 0; j--){
+        cout<< arr[j]<<" ";
+    }
+   
+    return 0;
+}
+```
+## C
+```c
+// Online C compiler to run C program online
+#include <stdio.h>
+
+
+int main() {
+    // Write C code here
+    int num, i = 0, arr[20];
+    printf("Enter a decimal Number : ");
+    scanf("%d", num);
+    
+    while(num ){
+     arr[i] = num % 8;
+     num = num / 8;
+     i++;
+    }
+    for(int j = i - 1; j >= 0; j--){
+        printf("%d ", arr[j]);
+    }
+   
+    return 0;
+}
+```
+## 25.wap to convert decimal to hexadecimal
+## c++
+```c++
+// Online C compiler to run C program online
+#include <iostream>
+
+using namespace std;
+int main() {
+    // Write C code here
+    int num, i = 0, arr[20];
+    cout<<"Enter a decimal Number : ";
+    cin>>num;
+    
+    while(num ){
+     arr[i] = num % 16;
+     num = num / 16;
+     i++;
+    }
+    for(int j = i - 1; j >= 0; j--){
+        
+        if(arr[j] == 10)
+        cout<<" A";
+        else if(arr[j] == 11)
+        cout<<" B";
+        else if(arr[j] == 12)
+        cout<<" C";
+        else if(arr[j] == 13)
+        cout<<" D";
+        else if(arr[j] == 14)
+        cout<<" E";
+        else if(arr[j] == 15)
+        cout<<" F";
+        else
+        cout<<" "<<arr[j];
+    }
+   
+    return 0;
+}
+```
+## c
+```c
+// Online C compiler to run C program online
+#include <stdio.h>
+
+
+int main() {
+    // Write C code here
+    int num, i = 0, arr[20];
+    printf("Enter a decimal Number : ");
+    scanf("%d", num);
+    
+    while(num ){
+     arr[i] = num % 16;
+     num = num / 16;
+     i++;
+    }
+    for(int j = i - 1; j >= 0; j--){
+       if(arr[j] == 10)
+        printf(" A");
+        else if(arr[j] == 11)
+        printf(" B");
+        else if(arr[j] == 12)
+        printf(" C");
+        else if(arr[j] == 13)
+        printf(" D");
+        else if(arr[j] == 14)
+        printf(" E");
+        else if(arr[j] == 15)
+        printf(" F");
+        else
+        printf("%d ",arr[j]);
+    }
+   
+    return 0;
+}
+```
+## 26.wap to convert Binary to Decimal
+## c++
+```c++
+// Online C compiler to run C program online
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+int main() {
+    // Write C code here
+     unsigned int binary, decimal;
+     cout<<"Enter Binary : ";
+     cin>>binary;
+     int i =0;
+     
+     while(binary){
+         
+         decimal = decimal + ((binary % 2)*(pow(2, i)));
+         i++;
+         binary = binary / 10;
+         
+     }
+     cout<<decimal;
+   
+    return 0;
+}
+```
+## C++
+```c++
+// Online C compiler to run C program online
+#include <stdio.h>
+#include <math.h>
+
+
+int main() {
+    // Write C code here
+     unsigned int binary, decimal;
+     printf("Enter Binary : ");
+     scanf("%d", binary);
+     int i =0;
+     
+     while(binary){
+         
+         decimal = decimal + ((binary % 2)*(pow(2, i)));
+         i++;
+         binary = binary / 10;
+         
+     }
+     printf("%d",decimal);
+   
+    return 0;
+}
+```
+
+## 27.wap to take input from user for nth term of fabonacci series
+## c++
+```c++
+// Online C compiler to run C program online
+#include <iostream>
+
+
+using namespace std;
+int main() {
+    // Write C code here
+    int n;
+    cout<<"Enter value of n ";
+    cin>>n;
+    int a = 0, b = 1;
+    if(n >= 2){
+        cout<<a<<" "<<b<<" ";
+        for(int i = 2; i < n; i++){
+           int temp = a;
+           a = b;
+           b = temp + b;
+            
+            cout<<b<<" ";
+            
+            
+        }
+    }
+    return 0;
+}
+```
+## c
+```c
+// Online C compiler to run C program online
+#include <stdio.h>
+#include <math.h>
+
+
+int main() {
+    // Write C code here
+    int n;
+    printf("Enter value of n ");
+    scanf("%d",n);
+    int a = 0, b = 1;
+    if(n >= 2){
+        printf("%d  %d",a ,b);
+        for(int i = 2; i < n; i++){
+           int temp = a;
+           a = b;
+           b = temp + b;
+            
+            printf("%d ", b);
+            
+            
+        }
+    }
+    return 0;
+}
+```
+## 28.wap to find the LCM of two number( Q29 same as Q28)
+## c++
+```c++
+// Online C compiler to run C program online
+#include <iostream>
+
+
+using namespace std;
+int main() {
+    // Write C code here
+    int num1, num2,flag = 0;
+    cout<<"Enter first number : ";
+    cin>>num1;
+    cout<<"Enter second number : ";
+    cin>>num2;
+    if(num2 > num1){
+        int temp = num1;
+        num1 = num2;
+        num2 = temp;
+    }
+    int duplicate = num2;
+    for(int i = 2; i < num1; i++){
+        if(((num2 % num1) == 0) && ((num2 % num2) == 0 )){
+            flag = 1;
+            break;
+        }
+        else {
+            
+            num2 = duplicate * i;
+        }
+    }
+    if(flag)
+    cout<<"LCM is : "<<num2;
+    else
+    cout<<"LCM is : "<<"1";
+    return 0;
+}
+```
+## c
+```c
+// Online C compiler to run C program online
+#include <stdio.h>
+#include <math.h>
+
+
+int main() {
+    // Write C code here
+    int num1, num2,flag = 0;
+    printf("Enter first number : ");
+    scanf("%d", &num1);
+    printf("Enter second number : ");
+    scanf("%d", &num2);
+    if(num2 > num1){
+        int temp = num1;
+        num1 = num2;
+        num2 = temp;
+    }
+    int duplicate = num2;
+    for(int i = 2; i < num1; i++){
+        if(((num2 % num1) == 0) && ((num2 % num2) == 0 )){
+            flag = 1;
+            break;
+        }
+        else {
+            
+            num2 = duplicate * i;
+        }
+    }
+    if(flag)
+    printf("LCM is : %d ",num2);
+    else
+    printf("LCM is : 1");
+    return 0;
+}
+```
+
+## 30.wap to segregate 0s and 1s in an array
+<!-- 
+input
+[1,0,0,0,1,1,1,0,1]
+output
+[0,0,0,0,1,1,1,1,1]
+ -->
+ ## c
+ ```c
+ // Online C compiler to run C program online
+#include <stdio.h>
+#include <stdlib.h>
+
+
+void segregate(int arr[], int n){
+    int count = 0;
+    for(int i = 0; i < n; i++){
+        if(arr[i] == 0)
+        count++;
+    }
+    for(int i = 0; i < count; i++)
+    arr[i] = 0 ;
+    for(int i = count; i < n; i++)
+    arr[i] = 1;
+    printf("Array after segregation : ");
+    for(int i = 0; i < n; i++){
+        printf("%d ", arr[i]);
+    }
+}
+
+int main() {
+    // Write C code here
+    int n, *ptr,i,x;
+    printf("Enter number of Elements : ");
+    scanf("%d", &n);
+    
+    ptr = (int*) malloc (n * sizeof(int));
+    
+    if(ptr == NULL){
+        printf("Error! memory is not allocated : ");
+        exit(0);
+    }
+    printf("Enter Numbers : ");
+    for(i = 0; i < n; ++i){
+       scanf("%d", ptr + i);   
+    }
+    
+    segregate(ptr, n);
+
+    return 0;
+}
+ ```
