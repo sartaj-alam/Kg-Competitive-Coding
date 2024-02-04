@@ -840,3 +840,371 @@ class HelloWorld {
     }
 }
 ```  
+## 13.wap to print the digits of given number in same order.
+## c (our concept)
+```c
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    // Write C code here
+    unsigned int a,dup, div = 1,count = 0;
+    scanf("%u", &a);
+    dup = a;
+    while(dup){
+        count ++;
+        dup = dup / 10;
+        div = div * 10;
+    }
+    div = div / 10;
+    while(count){
+        dup = a / div;
+        a = a % div;
+        div = div / 10;
+        count --;
+        printf("%u ", dup);
+    }
+    
+
+    return 0;
+}
+```
+## c (Yash sir using array concept)
+```c
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    // Write C code here
+    unsigned int num, arr[10];
+    int i = 0, j, r;
+    
+    scanf("%u", & num);
+    while(num){
+        r = num % 10;
+        arr[i] = r;
+        i++;
+        num = num / 10;
+    }
+    j = i - 1;
+    while(j > -1){
+        printf("%u ", arr[j]);
+        j--;
+    }
+    
+
+    return 0;
+}
+```
+## C++ ( Our concept)
+```c++
+// Online C++ compiler to run C++ program online
+#include <iostream>
+
+using namespace std;
+int main() {
+    // Write C++ code here
+    unsigned int num, dup, count = 0, div = 1;
+    cin>>num;
+    dup = num;
+    
+    while(dup){
+        count ++;
+        dup = dup / 10;
+        div = div * 10;
+    }
+    div = div / 10;
+    
+    while(count){
+        dup = num / div;
+        num = num % div;
+        div = div / 10;
+        count --;
+        cout<<dup<<" ";
+    }
+
+    return 0;
+}
+```
+
+## 14. wap to print box number pattern of 1 and 0.
+ <!-- 
+ input: 5 5 
+ output:
+ 1 1 1 1 1
+ 1 0 0 0 1
+ 1 0 0 0 1
+ 1 0 0 0 1
+ 1 1 1 1 1
+  -->
+## C
+```c
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    // Write C code here
+    unsigned int row, col;
+    
+    scanf("%u %u", &row, &col);
+    
+    for(int i = 0; i < row; i++){
+        
+        for( int j = 0; j < col; j ++){
+            
+            if(i == 0 || i == row  -1 ){
+                printf("1 ");
+            }
+            else if((i >= 1 && j == 0) || ( i >= 1 && j == col -1)){
+                printf("1 ");
+            }
+            else {
+                printf("0 ");
+            }
+        }
+        printf("\n");
+    }
+    
+    
+
+    return 0;
+}
+```
+
+## 15.wap to check the existing pair with given sum in array(Q16 is also Q15)
+<!-- 
+Dynamic programming concept is using here
+example 1
+ Sum = 10;
+ No. of Array elements = 9
+ Array Element = 0 2 5 7 4 6 10 20 -10
+ 
+ output
+ Array has two element with given sum
+
+ example2
+ Sum = 4
+ No.of Array elements = 3
+ Array element = 1 4 6
+
+ output
+ Sorry there is no any pair
+ -->
+ ## c
+ ```c
+ // Online C compiler to run C program online
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    // Write C code here
+    int n, i, j, *ptr, sum, flag = 1;
+    printf("Enter Sum : ");
+    scanf("%d", &sum);
+    
+    printf("Enter number of Element : ");
+    scanf("%d", &n);
+    
+    ptr = (int*) malloc(n * sizeof(int));
+    
+    if(ptr == NULL){
+        printf("Error! memory is not located ");
+        exit(0);
+    }
+    
+    printf("Enter Element ");
+    for(i = 0; i < n; ++i){
+        scanf("%d", ptr + 1);
+    }
+    
+   for( i = 0; i < n; i++){
+       
+       for(j = i; j < n; j++){
+           if((ptr[i] + ptr[j]) == sum){
+               printf("Array has two element ");
+               flag = 0;
+               break;
+           }
+       }
+       if(!flag){
+           break;
+       }
+   }
+   if(flag){
+       printf("Sorry Array does not have any two element");
+   }
+    
+    free(ptr);
+    
+
+    return 0;
+}
+ ```
+ ## 17.wap to print below pattern
+ <!-- 
+ input = 4
+ output
+ 1
+ 2*2
+ 3*3*3
+ 4*4*4*4
+ 4*4*4*4
+ 3*3*3
+ 2*2
+ 1
+  -->
+## c
+```c
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    // Write C code here
+    int num;
+    scanf("%d", &num);
+    for(int i = 1; i <= num; i++){
+        
+        for(int j = 1; j <= i; j++){
+            if(j == i)
+            printf("%u", i);
+            else
+            printf("%u * ", i);
+        }
+        printf("\n");
+    }
+    for(int i = num; i >0; i--){
+        
+        for(int j = i; j > 0; j--){
+            if(j == 1)
+            printf("%u", i);
+            else
+            printf("%u * ", i);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+```
+## 18. wap to check whether the number is plus perfect(amstrong number) or not (Q19 is same Q18)
+## c
+```c
+// Online C compiler to run C program online
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    // Write C code here
+    int num,dup, sum = 0, p= 0;
+    scanf("%d", &num);
+    
+    dup = num;
+    while(dup){
+        p ++;
+        dup = dup / 10;
+    }
+    dup = num;
+    while(dup){
+        int remind = dup % 10;
+        sum = sum + pow(remind, p);
+        dup = dup / 10;
+    }
+    
+    if(sum == num){
+        printf("Yes It is  plus perfect number %u", num);
+    }
+    else {
+        printf("Sorry! It is not plus perfect number %u", num);
+    }
+    
+
+    return 0;
+}
+```
+## C++
+```c++
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+int main() {
+    // Write C++ code here
+    int num, dup, sum = 0, p = 0;
+    cin>>num;
+    
+    dup = num;
+    while(dup){
+        p++;
+        dup = dup / 10;
+    }
+    
+    dup = num;
+    while(dup){
+        int remind = dup % 10;
+        sum = sum + pow(remind, p);
+        dup = dup / 10;
+    }
+    
+    if(sum == num)
+    cout << "Yes It is plus perfect number "<< num;
+    else
+    cout<<"Sorry It is not plus perfect number"<< num;
+
+    return 0;
+}
+```
+## 20.wap for given sorted array with many duplicate elements, the problem is to find the indexes of first and last occurance of an element x in given array. start the array from 0 index. if element x is not present in the array, print "No Occurance"
+
+## c
+```c
+// Online C compiler to run C program online
+#include <stdio.h>
+#include <stdlib.h>
+
+
+void findFirstAndLast(int arr[], int n, int x){
+    int first = -1, last = -1;
+    for(int i = 0; i < n; i++){
+        
+        if(x != arr[i])
+            continue;
+        if(first == -1)
+            first = i;
+        last = i;
+    }
+    if(first != -1){
+       printf("No Occurance");
+    }
+    else{
+         printf("%d %d", first, last);
+    }
+}
+
+int main() {
+    // Write C code here
+ 
+    int n, x, *ptr;
+    printf("Enter number of element ");
+    scanf("%d", &n);
+    ptr = (int*) malloc (n * sizeof(int));
+    
+    if(ptr == NULL){
+        printf("Error! memory is not allocated");
+        exit(0);
+    }
+    
+    printf("Enter Element ");
+    for(int i = 0; i < n; ++i){
+        scanf("%d", ptr + 1);
+    }
+    
+    printf("Enter number to be searched ");
+    scanf("%d", &x);
+    findFirstAndLast(ptr, n, x);
+   
+    
+
+    return 0;
+}
+```
