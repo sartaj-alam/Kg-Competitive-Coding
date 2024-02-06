@@ -692,3 +692,122 @@ int main() {
     return 0;
 }
  ```
+ ## 17.wap to reverse the string
+ ## c
+ ```c
+ // Online C compiler to run C program online
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    // Write C code here
+    char st[10000];
+    printf("Enter String : ");
+    scanf("%s", &st);
+   int i = 0;
+   int j = strlen(st) - 1;
+   while(i < j){
+       char a = st[i];
+       st[i] = st[j];
+       st[j] = a;
+       i++;
+       j--;
+   }
+  printf("%s", st);
+
+
+    return 0;
+}
+ ```
+
+ ## 21. User wrote a sequence of words,The words are written using the rules given below. The sequence is concatenation ofone or more   words consisting of english latter. All the latter of first word is lowercase. For each of the sub sequent words, the first latter is uppercase and rest is lowercase.You need to find out the words in the string.
+ ## c
+ ```c
+ // Online C compiler to run C program online
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    // Write C code here
+    char st[10000];
+    int i , cnt = 0;
+    scanf("%s", &st);
+    for(i = 0; i < strlen(st); i++){
+        if(st[i] >= 65 && st[i] <= 90){
+            cnt++;
+        }
+    }
+    printf("%d", cnt+1);
+
+    return 0;
+}
+ ``` 
+
+ ## 22.You are a traveller, lost in a jungle. But you have the Map with you . And you remember the route you travelled so you will backtrack and reach the Starting point. Your task is to print the starting point.
+ ## Input: First line consists of T test cases.Each test cases consits of 3 lines. First line of each test case consist of two integer X, Y denoting of your current location. Second line each test case consist of an integer N denoting of number of paths you travelled. Third line of each test case consist of 2*N spaced integer Xi, Yj denoting the pionts at the paths you travelled.
+
+ ## c
+ ```c
+ // Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    // Write C code here
+    int cx, cy, x, y, n;
+    scanf("%d %d", &cx, &cy);
+    scanf("%d", &n);
+    while(n--){
+        scanf("%d %d", &x, &y);
+        cx -= x;
+        cy -= y;
+    }
+    printf("%d %d ", cx, cy);
+
+    return 0;
+}
+ ```
+
+ ## 23. Given an array of integer, the task is to find whether it's possible to construct an integer using all the digits of these numbers such that it would be divided by 3. If it possible then print "1" and if not print "0";
+ ## c
+ ```c
+ // Online C compiler to run C program online
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    // Write C code here
+    int n;
+    printf("Enter the length of Array : ");
+    scanf("%d", &n);
+    int *ptr = NULL;
+    ptr = (int*)malloc(n*sizeof(int));
+    printf("Enter the array element : ");
+    for(int i = 0; i < n; i++){
+        scanf("%d", ptr+1);
+    }
+    
+    int i, sum = 0,flag = 1;
+    for( i = 1; i < n; i++){
+        
+        if(ptr[i] % 3 == 0){
+            printf("Yes divisible by 3, So 1 ");
+            i = n;
+            flag = 0;
+            break;
+        }
+        else {
+        while(ptr[i]){
+            
+            sum = sum + (ptr[i] % 10);
+            ptr[i] = ptr[i] / 10;
+        }
+    }
+    }
+    if(sum % 3 == 0 && sum)
+        printf("Yes divisible by 3, So 1");
+    else if(i  != n || flag)
+    printf("No!, So  0");
+    
+    return 0;
+}
+ ```
